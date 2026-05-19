@@ -238,8 +238,7 @@ body {
 .graduate-header {
     display: flex;
     gap: 40px;
-    align-items: center;
-    margin-bottom: 48px;
+    align-items: flex-start;
     flex-wrap: wrap;
     background: white;
     padding: 32px;
