@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bauman-navy: #0B2A3B;
+    --bauman-dark: #0D2B42;
+    --bauman-accent-red: #B22234;
+    --bauman-accent-gold: #C49A2B;
+    --bauman-light-bg: #F4F7FC;
+    --bauman-text: #1e2a3a;
+    --bauman-gray: #4a627a;
+    --bauman-border: #e2e8f0;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bauman-light-bg);
+    color: var(--bauman-text);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ========== ШАПКА ========== */
+.main-header {
+    background: var(--bauman-dark);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo-icon {
+    font-size: 1.6rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-link.active {
+    background: var(--bauman-accent-red);
+    color: white;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ========== ВКЛАДКИ ========== */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ========== ГЛАВНАЯ СТРАНИЦА ========== */
+.hero {
+    background: linear-gradient(135deg, var(--bauman-dark) 0%, #071a27 100%);
+    color: white;
+    padding: 80px 0 70px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: var(--bauman-accent-red);
+    padding: 6px 16px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.intro-text {
+    padding: 60px 0;
+    background: white;
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.preview-cards {
+    padding: 0 0 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 48px;
+    color: var(--bauman-dark);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--bauman-accent-gold);
+    margin: 16px auto 0;
+    border-radius: 4px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+}
+
+.preview-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    transition: all 0.25s;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 24px;
+    border: 1px solid var(--bauman-border);
+}
+
+.preview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+    border-color: var(--bauman-accent-gold);
+}
+
+.card-img {
+    height: 260px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.preview-card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.preview-card h3 {
+    margin: 20px 0 8px;
+    font-size: 1.4rem;
+    color: var(--bauman-dark);
+}
+
+.preview-card p {
+    color: var(--bauman-gray);
+    padding: 0 16px;
+    font-size: 0.9rem;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--bauman-accent-red);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* ========== СТРАНИЦА ВЫПУСКНИКА ========== */
+.graduate-page {
+    padding: 48px 0 80px;
+}
+
+.graduate-header {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    background: white;
+    padding: 32px;
+    border-radius: 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.graduate-portrait {
+    flex: 0 0 220px;
+    height: 220px;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 4px solid var(--bauman-accent-gold);
+}
+
+.graduate-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.graduate-title h1 {
+    font-size: 2.5rem;
+    color: var(--bauman-dark);
+    margin: 12px 0 8px;
+}
+
+.grad-year {
+    font-size: 0.8rem;
+    color: var(--bauman-accent-red);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.grad-legend {
+    font-size: 1.1rem;
+    color: var(--bauman-gray);
+    font-weight: 500;
+}
+
+.graduate-bio, .graduate-achievement {
+    background: white;
+    padding: 32px;
+    border-radius: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.graduate-bio h2, .graduate-achievement h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--bauman-dark);
+    border-left: 5px solid var(--bauman-accent-red);
+    padding-left: 18px;
+}
+
+.graduate-bio p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.achievement-block {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.achievement-text {
+    flex: 1;
+}
+
+.achievement-text p {
+    font-size: 1.05rem;
+    background: var(--bauman-light-bg);
+    padding: 20px;
+    border-radius: 24px;
+    border-left: 6px solid var(--bauman-accent-gold);
+}
+
+.achievement-img {
+    flex: 0 0 300px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.achievement-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== ФУТЕР ========== */
+.main-footer {
+    background: var(--bauman-dark);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 36px 0;
+    border-top: 4px solid var(--bauman-accent-red);
+}
+
+.footer-copyright {
+    font-size: 0.75rem;
+    margin-top: 12px;
+    opacity: 0.7;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 900px) {
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--bauman-dark);
+        padding: 20px;
+        gap: 12px;
+    }
+    .main-nav.open {
+        display: flex;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .graduate-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .achievement-block {
+        flex-direction: column;
+    }
+    .achievement-img {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 16px;
+    }
+    .graduate-bio, .graduate-achievement, .graduate-header {
+        padding: 20px;
+    }
+    .graduate-title h1 {
+        font-size: 1.8rem;
+    }
+}
