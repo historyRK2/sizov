@@ -248,12 +248,12 @@ body {
 }
 
 .graduate-portrait {
-    flex: 0 0 320px;
-    height: 320px;
-    border-radius: 32px;
+    flex: 0 0 220px;
+    height: 340px;
+    border-radius: 28px;
     overflow: hidden;
-    border: 5px solid var(--bauman-accent-gold);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    border: 4px solid var(--bauman-accent-gold);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
 .graduate-portrait img {
